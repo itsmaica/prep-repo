@@ -81,21 +81,39 @@ function bottlesOfBeerOnTheWall(num) {
     return;
   }
 
-  //opening statement
-  console.log(`${num} bottles of beer on the wall...🍻`);
+  // ! singular bottle
+  if (num === 1) {
+  // ! singular bottle
+    //opening statement
+    console.log(`${num} bottle of beer on the wall...🍻`);
 
-  //follow up
-  setTimeout(console.log, 1000, `${num} bottles of beer...🍻`);
+  // ! singular bottle
+    //follow up
+    setTimeout(console.log, 1000, `${num} bottle of beer...🍻`);
+  } else {
+    // *  opening statement
+    console.log(`${num} bottles of beer on the wall...🍻`);
 
-  //create an empty line
+    //* follow up
+    setTimeout(console.log, 1000, `${num} bottles of beer...🍻`);
+  }
+
+  // * create an empty line
   setTimeout(console.log, 1000, ``);
 
-  //start new round
-  setTimeout(console.log, 1000, `Take one down and pass it around...🍻`)
+  // * start new round
+  setTimeout(console.log, 3000, `Take one down and pass it around...🍻`);
 
-  //decrement the num
-  setTimeout(console.log, 3000, `${num -= 1} bottles of beer on the wall...🍻`)
+  // ! singular bottle
+  if (num === 2) {
+  // ! singular bottle
+    // * decrement the num
+    setTimeout(console.log, 4000, `${(num -= 1)} bottle of beer on the wall...🍻`);
+  } else {
+    // * decrement the num
+    setTimeout(console.log, 4000,`${(num -= 1)} bottles of beer on the wall...🍻`);
+  }
 
-  //recursive call
-  setTimeout(bottlesOfBeerOnTheWall, 5000, num)
+  //* recursive call
+  setTimeout(bottlesOfBeerOnTheWall, 5000, num);
 }

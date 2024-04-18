@@ -9,5 +9,9 @@ const rl = readline.createInterface({ input, output });
 
 // console.log(rl)
 
-// instead of the default cb, we're going to add one of our own making. 
-rl.question('How many bottles of beers on the wall? ', ());
+// instead of the default cb, we're going to add one of our own making.
+rl.question('How many bottles of beers on the wall? ', bottlesOfBeerOnTheWall());
+
+function bottlesOfBeerOnTheWall(num) {
+    
+}

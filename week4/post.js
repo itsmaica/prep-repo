@@ -22,7 +22,17 @@ class Post {
     }
 }
 
-// const post1 = new Post("Fallout", "It's great!! Having fun watching it it", "04/23/24", 31)
-// console.log(post1.printPost())
+// make a new post
+const testPost = new Post("Fallout", "It's great! Having a lot of fun watching it.", "04/23/24", 31)
+
+//like a post
+testPost.likePost()
+testPost.likePost()
+
+
+// print the post
+console.log(testPost.printPost())
+
+console.log(testPost)
 
 module.exports = Post;

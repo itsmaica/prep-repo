@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const sinon = require("sinon");
 const NFLFan = require("../class/nflfan.js");
-const SuperFan = require("../class/superfan");
+const SuperFan = require("../class/superfan.js");
 
 
 describe ('SuperFan', () => {
@@ -46,9 +46,9 @@ describe ('SuperFan', () => {
         afterEach(() => {
             console.log.restore();
         });
-        it('and logs to the console "I would rather die than route for a different team!"', () => {
+        it('and logs to the console "I would rather die than root for a different team!"', () => {
             fan.iAmNoTraitor("Cowboys")
-            expect(console.log.calledWith("I would rather die than route for a different team!")).to.be
+            expect(console.log.calledWith("I would rather die than root for a different team!")).to.be
             .true;
         });
         it('and also logs to the console "${Favorite Team} for life!!!"', () => {
@@ -85,6 +85,5 @@ describe ('SuperFan', () => {
             expect(console.log.calledWith("I was harassing the ref and security kicked me out, it was awesome!")).to.be
                 .true;
         });
-        // console.log("I was harassing the ref and security kicked me out, it was awesome!");
     });
 });

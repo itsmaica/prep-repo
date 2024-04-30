@@ -1,43 +1,20 @@
-// class Dog {
-//     constructor(){
-//         this.name = "dog"
-//     }
+// test() // invoking func that hasn't been declared -> ref error
 
-//     bark(){
-//         console.log("bark bark")
+
+// the code returns a varible but misspells it -> ref error
+// function test2(){
+//     const bool = true;
+//     return boo
+// }
+
+// test2()
+
+// class Dog{
+//     eat(){
+//         console.log('yum food')
 //     }
 // }
 
-// const doggo = new Dog()
-// console.log(doggo.bar())
 
-
-// function test(){
-//     let result = true;
-
-//     return res;
-// }
-
-// tet()
-
-/*
-* This one about bind
-
-
-*/
-
-class Dog {
-    constructor(name){
-        this.name = name;
-        this.sound = 'woof';
-
-    }
-    speak(){
-        return `${this.name} says ${this.sound}`
-    }
-}
-
-let fido = new Dog("Fido");
-let fidoSpeak = fido.speak.bind(fido);
-
-console.log(fidoSpeak());
+// const doggo = new Dog;
+// doggo.ea()

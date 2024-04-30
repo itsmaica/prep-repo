@@ -1,5 +1,5 @@
 class NFLFan {
-    constructor(name, age, team, gamesAttended=0){
+    constructor(name, age, team){
         this.name = name;
         this.age = age;
         this.team = team;

@@ -12,13 +12,13 @@
 */
 // * 2. Make a plan
 /*
-    a. split the string up in to chunks of 8 (8 bits is a byte)
-        1. iterate through the string (for loop) use slice -> output to be an array
-    b. after we have separate chunks, we convert binary to ascii string
-        1. iterate through our array from the above
-            1.5 helper function to get num value
-            1.51 num value to a char code
-   c. profit.
+    1. split the string up in to chunks of 8 (8 bits is a byte)
+        a. iterate through the string (for loop) use slice -> output to be an array
+    2. after we have separate chunks, we convert binary to ascii string
+        a. iterate through our array from the above
+            - helper function to get num value
+            - num value to a char code
+   c. return result.
 */
 //* 3. Execute the plan 😎
 

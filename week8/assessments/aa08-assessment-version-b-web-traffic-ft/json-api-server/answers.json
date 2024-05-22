@@ -1,0 +1,128 @@
+{
+  "1": {
+    "endpoint": "1 - Get all the authors",
+    "request": {
+      "method": "",
+      "URL": "",
+      "headers": null,
+      "body": null
+    },
+    "response": {
+      "headers": null,
+      "statusCode": null,
+      "body": null
+    }
+  },
+  "2": {
+    "endpoint": "2 - Get a specific author's details based on authorId",
+    "request": {
+      "method": "",
+      "URL": "",
+      "headers": null,
+      "body": null
+    },
+    "response": {
+      "headers": null,
+      "statusCode": null,
+      "body": null
+    }
+  },
+  "3": {
+    "endpoint": "3 - Add an author",
+    "request": {
+      "method": "",
+      "URL": "",
+      "headers": null,
+      "body": null
+    },
+    "response": {
+      "headers": null,
+      "statusCode": null,
+      "body": null
+    }
+  },
+  "4": {
+    "endpoint": "4 - Edit a specified author by authorId",
+    "request": {
+      "method": "",
+      "URL": "",
+      "headers": null,
+      "body": null
+    },
+    "response": {
+      "headers": null,
+      "statusCode": null,
+      "body": null
+    }
+  },
+  "5": {
+    "endpoint": "5 - Get all the books of a specific author based on authorId",
+    "request": {
+      "method": "",
+      "URL": "",
+      "headers": null,
+      "body": null
+    },
+    "response": {
+      "headers": null,
+      "statusCode": null,
+      "body": null
+    }
+  },
+  "6": {
+    "endpoint": "6 - Get all the books of a specific genre",
+    "request": {
+      "method": "",
+      "URL": "",
+      "headers": null,
+      "body": null
+    },
+    "response": {
+      "headers": null,
+      "statusCode": null,
+      "body": null
+    }
+  },
+  "7": {
+    "endpoint": "7 - Get all the information of a specified book by bookId",
+    "request": {
+      "method": "",
+      "URL": "",
+      "headers": null,
+      "body": null
+    },
+    "response": {
+      "headers": null,
+      "statusCode": null,
+      "body": null
+    }
+  },
+  "8": {
+    "endpoint": "8 - Add a book to a specific author based on authorId",
+    "request": {
+      "method": "",
+      "URL": "",
+      "headers": null,
+      "body": null
+    },
+    "response": {
+      "headers": null,
+      "statusCode": null,
+      "body": null
+    }
+  },
+  "9": {
+    "endpoint": "9 - Delete a specified book by bookId",
+    "request": {
+      "method": "",
+      "URL": "",
+      "headers": null,
+      "body": null
+    },
+    "response": {
+      "headers": null,
+      "statusCode": null,
+      "body": null
+    }
+  }
+}

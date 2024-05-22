@@ -1,0 +1,142 @@
+{
+  "1": {
+    "endpoint": "1 - Get all the authors",
+    "request": {
+      "method": "",
+      "URL": "",
+      "headers": null,
+      "body": null
+    },
+    "response": {
+      "headers": null,
+      "statusCode": null,
+      "body": null
+    }
+  },
+  "2": {
+    "endpoint": "2 - Get a specific author's details based on authorId",
+    "request": {
+      "method": "",
+      "URL": "",
+      "headers": null,
+      "body": null
+    },
+    "response": {
+      "headers": null,
+      "statusCode": null,
+      "body": null
+    }
+  },
+  "3": {
+    "endpoint": "3 - Get the form to add an author",
+    "request": {
+      "method": "",
+      "URL": "",
+      "headers": null,
+      "body": null
+    },
+    "response": {
+      "headers": null,
+      "statusCode": null,
+      "body": null
+    }
+  },
+  "4": {
+    "endpoint": "4 -  Form submission for adding an author",
+    "request": {
+      "method": "",
+      "URL": "",
+      "headers": null,
+      "body": null
+    },
+    "response": {
+      "headers": null,
+      "statusCode": null,
+      "body": null
+    }
+  },
+  "5": {
+    "endpoint": "5 - Get the form to edit an author",
+    "request": {
+      "method": "",
+      "URL": "",
+      "headers": null,
+      "body": null
+    },
+    "response": {
+      "headers": null,
+      "statusCode": null,
+      "body": null
+    }
+  },
+  "6": {
+    "endpoint": "6 - Form submission for editing an author",
+    "request": {
+      "method": "",
+      "URL": "",
+      "headers": null,
+      "body": null
+    },
+    "response": {
+      "headers": null,
+      "statusCode": null,
+      "body": null
+    }
+  },
+  "7": {
+    "endpoint": "7 - Get all the books of a specific genre",
+    "request": {
+      "method": "",
+      "URL": "",
+      "headers": null,
+      "body": null
+    },
+    "response": {
+      "headers": null,
+      "statusCode": null,
+      "body": null
+    }
+  },
+  "8": {
+    "endpoint": "8 - Get all the information of a specified book by bookId",
+    "request": {
+      "method": "",
+      "URL": "",
+      "headers": null,
+      "body": null
+    },
+    "response": {
+      "headers": null,
+      "statusCode": null,
+      "body": null
+    }
+  },
+  "9": {
+    "endpoint": "9 - Form submission for adding a book to a specific author based on authorId",
+    "request": {
+      "method": "",
+      "URL": "",
+      "headers": null,
+      "body": null
+    },
+    "response": {
+      "headers": null,
+      "statusCode": null,
+      "body": null
+    }
+  },
+  "10": {
+    "endpoint": "10 - Form submission for deleting a book",
+    "request": {
+      "method": "",
+      "URL": "",
+      "headers": null,
+      "body": null
+    },
+    "response": {
+      "headers": null,
+      "statusCode": null,
+      "body": null
+    }
+  }
+}

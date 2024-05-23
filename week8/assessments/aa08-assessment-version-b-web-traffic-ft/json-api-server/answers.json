@@ -2,10 +2,10 @@
   "1": {
     "endpoint": "1 - Get all the authors",
     "request": {
-      "method": "",
-      "URL": "",
-      "headers": null,
-      "body": null
+      "method": "GET",
+      "URL": "/",
+      "headers": false,
+      "body": false
     },
     "response": {
       "headers": null,

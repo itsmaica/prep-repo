@@ -13,10 +13,10 @@ const growPlant = makePromise('growPlant');
 // Your code here
 
 // ! GOTTA RUN IN MOCHA TO SEE THE LOGS!
-// console.log('soil -> \n',addSoil) // shows a func
-// console.log('what dis? ', addSoil()) // Promise { true } -> a promise!!
+console.log('soil -> \n',addSoil) // ! shows a func
+console.log('what dis? ', addSoil()) // ! Promise { true } -> a promise!!
 
-// cannot be logged outside of the main func?
+
 async function potPlant1(seed) {
   // console.log(addSoil)
 

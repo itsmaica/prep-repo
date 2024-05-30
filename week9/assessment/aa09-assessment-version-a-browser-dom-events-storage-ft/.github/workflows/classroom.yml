@@ -1,0 +1,120 @@
+name: GitHub Classroom Autograder - HTML/CSS 3a (Browser DOM Events Storage)
+on:
+  push:
+    branches-ignore:
+      - main
+      - master
+
+env:
+  MAX_SCORE: 13
+  PASSING_SCORE: 10
+  COURSE_ID: '313' # (Required) canvas course id
+  ASSIGNMENT_ID: '17483' # (Required) canvas assignment id
+  TERM: 'linux'
+
+jobs:
+  grade:
+    name: Grade Submission for ${{ github.actor }}
+    env:
+      DB_FILE: db/dev.db
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display necessary software versions
+        run: |
+          echo "Node version: $(node --version)"
+          echo "Npm version: $(npm --version)"
+      - name: Checkout student code
+        uses: actions/checkout@v4
+        with:
+          path: student/
+      - name: Remove student test files
+        run: |
+          rm -rf student/event-handling-storage/cypress/e2e
+          rm -rf student/event-handling-storage/scripts
+          rm -rf student/event-handling-storage/cypress.config.js
+          rm -rf student/event-handling-storage/index.html
+          rm -rf student/event-handling-storage/site.css
+          rm -rf student/selection-manipulation/cypress/e2e
+          rm -rf student/selection-manipulation/scripts
+          rm -rf student/selection-manipulation/cypress.config.js
+          rm -rf student/selection-manipulation/index.html
+          rm -rf student/selection-manipulation/site.css
+      - name: Checkout solution test files
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT }}
+          repository: ${{ secrets.SOLUTION_REPO_NAME }}
+          path: solution/
+          sparse-checkout: |
+            ${{ secrets.SOLUTION_PROJECT_PATH }}/event-handling-storage/cypress/e2e/
+            ${{ secrets.SOLUTION_PROJECT_PATH }}/event-handling-storage/scripts/
+            ${{ secrets.SOLUTION_PROJECT_PATH }}/event-handling-storage/cypress.config.js
+            ${{ secrets.SOLUTION_PROJECT_PATH }}/event-handling-storage/index.html
+            ${{ secrets.SOLUTION_PROJECT_PATH }}/event-handling-storage/site.css
+            ${{ secrets.SOLUTION_PROJECT_PATH }}/selection-manipulation/cypress/e2e/
+            ${{ secrets.SOLUTION_PROJECT_PATH }}/selection-manipulation/scripts/
+            ${{ secrets.SOLUTION_PROJECT_PATH }}/selection-manipulation/cypress.config.js
+            ${{ secrets.SOLUTION_PROJECT_PATH }}/selection-manipulation/index.html
+            ${{ secrets.SOLUTION_PROJECT_PATH }}/selection-manipulation/site.css
+          sparse-checkout-cone-mode: false
+      - name: Move solution tests files to student folder
+        run: |
+          cp -r solution/${{ secrets.SOLUTION_PROJECT_PATH }}/event-handling-storage/cypress/e2e student/event-handling-storage/cypress/e2e
+          cp -r solution/${{ secrets.SOLUTION_PROJECT_PATH }}/event-handling-storage/scripts student/event-handling-storage/scripts
+          cp solution/${{ secrets.SOLUTION_PROJECT_PATH }}/event-handling-storage/cypress.config.js student/event-handling-storage/cypress.config.js
+          cp solution/${{ secrets.SOLUTION_PROJECT_PATH }}/event-handling-storage/index.html student/event-handling-storage/index.html
+          cp solution/${{ secrets.SOLUTION_PROJECT_PATH }}/event-handling-storage/site.css student/event-handling-storage/site.css
+          cp -r solution/${{ secrets.SOLUTION_PROJECT_PATH }}/selection-manipulation/cypress/e2e student/selection-manipulation/cypress/e2e
+          cp -r solution/${{ secrets.SOLUTION_PROJECT_PATH }}/selection-manipulation/scripts student/selection-manipulation/scripts
+          cp solution/${{ secrets.SOLUTION_PROJECT_PATH }}/selection-manipulation/cypress.config.js student/selection-manipulation/cypress.config.js
+          cp solution/${{ secrets.SOLUTION_PROJECT_PATH }}/selection-manipulation/index.html student/selection-manipulation/index.html
+          cp solution/${{ secrets.SOLUTION_PROJECT_PATH }}/selection-manipulation/site.css student/selection-manipulation/site.css
+      - name: Install dependencies in student folder
+        run: |
+          cd student/
+          npm install
+      - name: Run event-handling-storage tests in student folder
+        continue-on-error: true
+        run: |
+          cd student/event-handling-storage
+          node scripts/test-script.js &> /dev/null
+      - name: Run selection-manipulation tests in student folder
+        continue-on-error: true
+        run: |
+          cd student/selection-manipulation
+          node scripts/test-script.js &> /dev/null
+      - name: Display failed tests
+        run: |
+          cd student/
+          echo "Event Handling Storage failures"
+          cat event-handling-storage/output.json | jq '[(.failures[] | {fullTitle, error: .displayError})]'
+          echo "Selection manipulation failures"
+          cat selection-manipulation/output.json | jq '[(.failures[] | {fullTitle, error: .displayError})]'
+      - name: Send student's grade to SF
+        if: ${{ always() }}
+        run: |
+          cd student/
+          posted_score1="$( cat event-handling-storage/output.json | jq '.stats.passes' )"
+          posted_score2="$( cat selection-manipulation/output.json | jq '.stats.passes' )"
+          if [ "$posted_score1" = "" ]
+          then
+            posted_score1="0"
+          fi
+          if [ "$posted_score2" = "" ]
+          then
+            posted_score2="0"
+          fi
+          # Double the points
+          posted_score=$(( $posted_score1 + $posted_score2 ))
+          echo "  SCORE: $posted_score  "
+          curl -X POST '${{ secrets.RESULTS_WEBHOOK }}' \
+            -H 'Content-Type: application/json' \
+            -d '{
+              "GithubUsername": "${{ github.ref_name }}",
+              "PostedGrade": "'${posted_score}'",
+              "MaxScore": "'${MAX_SCORE}'",
+              "PassingScore": "'${PASSING_SCORE}'",
+              "CourseId": "'${COURSE_ID}'",
+              "AssignmentId": "'${ASSIGNMENT_ID}'",
+              "GithubRepoUrlPath": "${{ github.repository }}"
+            }'

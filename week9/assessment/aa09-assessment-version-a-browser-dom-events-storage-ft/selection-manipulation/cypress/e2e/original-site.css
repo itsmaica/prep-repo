@@ -1,0 +1,32 @@
+/* DO NOT CHANGE THE CSS IN THIS FILE OR YOU MAY FAIL */
+.square {
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    display: inline-block;
+}
+
+.last {
+    border: 3px solid blue;
+    display: inline-block;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    color: white;
+    background-color: red;
+    height: 50px;
+    width: 50px;
+}
+
+img {
+    max-width: 950px;
+    height: auto;
+}
+
+body {
+    max-width: 1000px;
+    margin: 10px;
+}

@@ -39,7 +39,7 @@
       "statusCode": 201,
       "body": {
         "colorId": 3,
-        "color": "puice"
+        "color": "puce"
       }
     }
   }

@@ -16,11 +16,11 @@ const arrowRestSum = (...args) => {
   // create a res variable;
   let res = 0;
   //
-  // args.forEach(num => res += num)
+  args.forEach(num => res += num)
 
-  for (let num of args) {
-    res += num;
-  }
+  // for (let num of args) {
+  //   res += num;
+  // }
 
   return res
 }

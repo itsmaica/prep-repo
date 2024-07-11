@@ -8,15 +8,26 @@ ability to implicitly return by leaving out your own return statement.
 
 
 Examples:
-let result1 = addFive(0); // returns 5
-let result2 = addFive(10); // returns 15
-let result3 = addFive(37); // returns 42
 
 
 ***********************************************************************/
 
-// Your code here 
+// Your code here
+  // ! multi line logic
+const addFive1 = (num) => {
+  return num + 5;
+}
 
+// ! one liner
+// utilizing implicit return
+const addFive = num => num + 5;
+
+let result1 = addFive(0); // returns 5
+console.log(result1)
+let result2 = addFive(10); // returns 15
+console.log(result2)
+let result3 = addFive(37); // returns 42
+console.log(result3)
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = addFive;

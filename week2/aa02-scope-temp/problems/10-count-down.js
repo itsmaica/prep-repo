@@ -13,35 +13,30 @@ invoked below:
 
 // Your code here
 const countDownTimer = (n) => {
-
-
   // n represents days.
   // 0 means it is new years day
-  if (n === 0) return "Happy New Year!"
+  if (n === 0) return "Happy New Year!";
 
   // we don't want an anon func -> this needs to decrement n
   // if it is not new years day, we return a func to count down.
   const count = () => {
     // console.log("Happy New Year!")
-    --n
+    --n;
     if (n <= 0) {
-      return "Happy New Year!"
+      return "Happy New Year!";
     } else {
       return count;
     }
     // console.log(n, 'yo')
-    console.log(n)
+    console.log(n);
+  };
 
-  }
-
-  return count
+  return count;
   // console.log('hello',n)
-
-}
+};
 
 // // Example 1:
 //   console.log(countDownTimer(0)); // prints "Happy New Year!"
-
 
 // // Example 2:
 let oneDay = countDownTimer(1); // returns a function
@@ -58,17 +53,16 @@ console.log(oneDay()); // prints "Happy New Year!"
 //   }
 // }
 
-
 // // Example 3:
-  // let twoDays = countDownTimer(2); // returns a function
-  // console.log(twoDays()); // returns a function
-  // console.log(twoDays()); // prints "Happy New Year!"
+// let twoDays = countDownTimer(2); // returns a function
+// console.log(twoDays()); // returns a function
+// console.log(twoDays()); // prints "Happy New Year!"
 
 // // Example 4:
-  // let threeDays = countDownTimer(3); // returns a function
-  // console.log(threeDays()); // returns a function
-  // console.log(threeDays()); // returns a function
-  // console.log(threeDays()); // prints "Happy New Year!"
+// let threeDays = countDownTimer(3); // returns a function
+// console.log(threeDays()); // returns a function
+// console.log(threeDays()); // returns a function
+// console.log(threeDays()); // prints "Happy New Year!"
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

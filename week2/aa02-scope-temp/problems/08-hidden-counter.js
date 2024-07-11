@@ -11,15 +11,13 @@ Look below to see how this function is invoked:
 
 // Your code here
 
-
 const hiddenCounter = () => {
   // let count = 0;
   // return () => count+=1
 
   let count = 0;
-  return () => (++count);
-
-}
+  return () => ++count;
+};
 
 // console.log(count)
 // function hiddenCounter(){

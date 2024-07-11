@@ -22,7 +22,16 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
   fat-arrow function
 ***********************************************************************/
 
-// Your code here 
+// Your code here
+function lazyAdder(firstNum) {
+  //!!START
+  return function (secondNum) {
+    return function (thirdNum) {
+      return firstNum + secondNum + thirdNum;
+    };
+  };
+  //!!END
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 

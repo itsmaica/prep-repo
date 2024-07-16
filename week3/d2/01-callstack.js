@@ -12,3 +12,9 @@
 
 
 */
+
+function myFunc(num){
+    return num + 10;
+}
+
+console.log(myFunc(12)); 
